@@ -66,11 +66,12 @@ Each block provides core functionality while allowing you to apply your own styl
 # Install dependencies
 npm install
 
-# Build for development
+# Watch
+npm run start
+
+# Build
 npm run build
 
-# Build for production
-npm run build:production
 ```
 
 ### PHP Dependencies
