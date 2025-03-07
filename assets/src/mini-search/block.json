@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/mini-search",
+  "version": "1.0.0",
+  "title": "Mini Search",
+  "category": "custom",
+  "keywords": [
+    "custom",
+    "mini",
+    "search"
+  ],
+  "icon": "smiley",
+  "description": "Display a button for customers to quickly search the website.",
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "typography": {
+      "fontSize": false
+    },
+    "interactivity": true
+  },
+  "textdomain": "fse-block-toolkit",
+  "style": "file:./style-index.css",
+  "editorScript": "file:./index.js",
+  "viewScriptModule": "file:./view.js"
+}

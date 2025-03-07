@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/side-menu",
+  "version": "1.0.0",
+  "title": "Side Menu",
+  "category": "custom",
+  "keywords": [
+    "custom",
+    "side",
+    "mobile",
+    "menu",
+    "nav"
+  ],
+  "icon": "smiley",
+  "description": "Offer a button the brings up a side menu, which can be used for both desktop and mobile.",
+  "attributes": {
+    "selectedNavigation": {
+      "type": "string",
+      "default": ""
+    },
+    "selectedSecondaryNavigation": {
+      "type": "string",
+      "default": ""
+    },
+    "visibilityDesktop": {
+      "type": "boolean",
+      "default": false
+    },
+    "visibilityTablet": {
+      "type": "boolean",
+      "default": false
+    },
+    "visibilityMobile": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "typography": {
+      "fontSize": false
+    },
+    "interactivity": true
+  },
+  "textdomain": "fse-block-toolkit",
+  "style": "file:./style-index.css",
+  "editorScript": "file:./index.js",
+  "viewScriptModule": "file:./view.js"
+}

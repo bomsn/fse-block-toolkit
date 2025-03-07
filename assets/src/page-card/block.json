@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/page-card",
+  "title": "Page Card",
+  "description": "Display a customizable card with selected page content.",
+  "category": "custom",
+  "icon": "grid-view",
+  "textdomain": "fse-block-toolkit",
+  "keywords": [
+    "page",
+    "card",
+    "content"
+  ],
+  "attributes": {
+    "selectedPageId": {
+      "type": "number",
+      "default": 0
+    },
+    "selectedItems": {
+      "type": "array",
+      "default": [
+        "image",
+        "title"
+      ]
+    },
+    "enableCustomTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "customTitle": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "reusable": true,
+    "multiple": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "__experimentalFontFamily": true,
+      "__experimentalFontWeight": true,
+      "__experimentalFontStyle": true,
+      "__experimentalTextTransform": true,
+      "__experimentalTextDecoration": true,
+      "__experimentalLetterSpacing": true,
+      "__experimentalDefaultControls": {
+        "fontSize": true
+      }
+    },
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    }
+  },
+  "example": {
+    "attributes": {
+      "selectedPageId": 1,
+      "selectedItems": [
+        "image",
+        "title",
+        "excerpt"
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

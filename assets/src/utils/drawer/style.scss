@@ -1,0 +1,209 @@
+root {
+	/* This value might be overridden in PHP based on the attribute set by the user. */
+	--drawer-width: 480px;
+	--neg-drawer-width: calc(var(--drawer-width) * -1);
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slidein {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(max(-100%, var(--neg-drawer-width)));
+	}
+}
+
+@keyframes rtlslidein {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(min(100%, var(--drawer-width)));
+	}
+}
+
+/*
+* overlay and drawer style
+*/
+.fse-block-toolkit-components-drawer__screen-overlay {
+	background-color: rgba(95, 95, 95, 0.35);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity 0.3s;
+	z-index: 9999;
+	opacity: 1;
+}
+
+.fse-block-toolkit-components-drawer__screen-overlay--with-slide-out {
+	transition: opacity 0.3s;
+}
+
+// We can't use transition for the slide-in animation because the element
+// doesn't exist in the DOM when not open. Instead, use an animation that
+// is triggered when the element is appended to the DOM.
+.fse-block-toolkit-components-drawer__screen-overlay--with-slide-in {
+	animation-duration: 0.3s;
+	animation-name: fadein;
+}
+
+.fse-block-toolkit-components-drawer__screen-overlay--is-hidden {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.fse-block-toolkit-components-drawer {
+	position: relative;
+
+	&::after {
+		border-style: solid;
+		border-width: 1px;
+		bottom: 0;
+		content: "";
+		display: block;
+		left: 0;
+		opacity: 0.3;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	background: #fff;
+	display: block;
+	height: 100%;
+	left: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateX(max(-100%, var(--neg-drawer-width)));
+	width: var(--drawer-width);
+	max-width: 100%;
+}
+
+.rtl .fse-block-toolkit-components-drawer {
+	transform: translateX(min(100%, var(--drawer-width)));
+}
+
+.fse-block-toolkit-components-drawer__screen-overlay--with-slide-out .fse-block-toolkit-components-drawer {
+	transition: transform 0.3s;
+}
+
+.fse-block-toolkit-components-drawer__screen-overlay--with-slide-in .fse-block-toolkit-components-drawer {
+	animation-duration: 0.3s;
+	animation-name: slidein;
+}
+
+.rtl .fse-block-toolkit-components-drawer__screen-overlay--with-slide-in .fse-block-toolkit-components-drawer {
+	animation-name: rtlslidein;
+}
+
+.fse-block-toolkit-components-drawer__screen-overlay--is-hidden .fse-block-toolkit-components-drawer {
+	transform: translateX(0);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	.fse-block-toolkit-components-drawer__screen-overlay {
+		animation-name: none !important;
+		transition: none !important;
+	}
+
+	.fse-block-toolkit-components-drawer {
+		animation-name: none !important;
+		transition: none !important;
+	}
+}
+
+// Important rules are needed to reset button styles.
+.fse-block-toolkit-components-button.fse-block-toolkit-components-drawer__close {
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	background: transparent !important;
+	color: inherit !important;
+	position: absolute !important;
+	top: 12px;
+	right: 12px;
+	opacity: 0.6;
+	z-index: 2;
+	// Increase clickable area.
+	padding: 1em !important;
+	margin: -1em;
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: 1;
+	}
+
+	// Don't show focus styles if the close button hasn't been focused by the
+	// user directly. This is done to prevent focus styles to appear when
+	// opening the drawer with the mouse, as the focus is moved inside
+	// programmatically.
+	&:focus:not(:focus-visible) {
+		box-shadow: none;
+		outline: none;
+	}
+
+	svg {
+		fill: currentColor;
+		display: block;
+	}
+}
+
+.fse-block-toolkit-components-drawer__content {
+	height: 100dvh;
+	position: relative;
+}
+
+.admin-bar .fse-block-toolkit-components-drawer__content {
+	margin-top: 46px;
+	height: calc(100dvh - 46px);
+}
+
+@media only screen and (min-width: 783px) {
+	.admin-bar .fse-block-toolkit-components-drawer__content {
+		margin-top: 32px;
+		height: calc(100dvh - 32px);
+	}
+}
+
+.fse-block-toolkit-components-drawer__inner-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-height: -moz-available;
+	max-height: stretch;
+	background: inherit;
+
+	h2 {
+		align-items: baseline;
+		background: inherit;
+		display: flex;
+		font-size: 2em;
+		margin: 16px 16px -32px;
+		mask-image: linear-gradient(#000 calc(100% - 24px), transparent);
+		padding-bottom: 32px;
+		z-index: 1;
+
+		&+div {
+			padding: 16px;
+		}
+	}
+}

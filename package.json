@@ -1,0 +1,70 @@
+{
+  "name": "fse-block-toolkit",
+  "version": "1.0.0",
+  "description": "A toolkit for building FSE websites.",
+  "author": {
+    "name": "Ali Khallad",
+    "url": "https://alikhallad.com"
+  },
+  "homepage": "https://alikhallad.com",
+  "repository": "https://github.com/bomsn/fse-block-toolkit",
+  "bugs": "https://github.com/bomsn/fse-block-toolkit/issues",
+  "private": true,
+  "engines": {
+    "node": ">=21.4.0",
+    "npm": ">=10.2.5"
+  },
+  "devDependencies": {
+    "@csstools/postcss-sass": "^5.0.1",
+    "@storybook/react": "^8.2.5",
+    "@wordpress/browserslist-config": "^5.20.0",
+    "@wordpress/icons": "^9.44.0",
+    "@wordpress/postcss-plugins-preset": "^4.21.0",
+    "@wordpress/scripts": "^28.3.0",
+    "classnames": "^2.5.1",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "rtlcss": "^4.0.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "echo:name": "echo %npm_package_name%",
+    "build": "npm-run-all --sequential build:**",
+    "build:blocks": "wp-scripts build --experimental-modules --webpack-src-dir=assets/src --output-path=assets/build",
+    "format:scripts": "wp-scripts format . --no-error-on-unmatched-pattern",
+    "format:styles": "npm run lint:styles -- --fix",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "lint:readme-md": "wp-scripts lint-md-docs README.md",
+    "lint:scripts": "wp-scripts lint-js . --no-error-on-unmatched-pattern",
+    "lint:styles": "wp-scripts lint-style **/*.{css,sass,scss} --allow-empty-input --report-descriptionless-disables --report-invalid-scope-disables --report-needless-disables",
+    "packages-update": "wp-scripts packages-update",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "start": "npm-run-all --parallel start:**",
+    "start:blocks": "wp-scripts start --experimental-modules --webpack-src-dir=assets/src --output-path=assets/build"
+  },
+  "dependencies": {
+    "@ariakit/react": "^0.4.7",
+    "clsx": "^2.1.1",
+    "mf-conditional-fields": "^1.0.9",
+    "react-beautiful-dnd": "^13.1.1",
+    "tiny-slider": "^2.9.4",
+    "use-debounce": "^10.0.1"
+  }
+}

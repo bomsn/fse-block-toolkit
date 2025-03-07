@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/currency-switcher",
+  "title": "Currency Switcher",
+  "description": "Display a post's currency switcher.",
+  "textdomain": "fse-block-toolkit",
+  "category": "custom",
+  "icon": "smiley",
+  "keywords": [
+    "custom",
+    "currency"
+  ],
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "fontStyle": true,
+      "fontWeight": true,
+      "fontFamily": true,
+      "textTransform": true,
+      "letterSpacing": true,
+      "textDecoration": true,
+      "__experimentalFontStyle": true,
+      "__experimentalFontWeight": true,
+      "__experimentalTextTransform": true,
+      "__experimentalFontFamily": true,
+      "__experimentalLetterSpacing": true,
+      "__experimentalTextDecoration": true,
+      "__experimentalSkipSerialization": [
+        "textDecoration"
+      ],
+      "__experimentalDefaultControls": {
+        "fontSize": true
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "width": true,
+      "__experimentalSkipSerialization": true,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "radius": true,
+        "width": true
+      }
+    },
+    "spacing": {
+      "blockGap": true,
+      "units": [
+        "px",
+        "em",
+        "rem",
+        "vh",
+        "vw"
+      ],
+      "__experimentalDefaultControls": {
+        "blockGap": true
+      }
+    },
+    "layout": false
+  },
+  "script": "file:./script.js",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

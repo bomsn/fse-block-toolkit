@@ -1,0 +1,105 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/slider",
+  "version": "1.0.0",
+  "title": "Slider",
+  "category": "custom",
+  "icon": "smiley",
+  "allowedBlocks": [
+    "core/image"
+  ],
+  "description": "A simple and lightweight slider.",
+  "keywords": [
+    "custom",
+    "logos",
+    "partners",
+    "carousel",
+    "slider"
+  ],
+  "textdomain": "fse-block-toolkit",
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "default": [],
+      "source": "query",
+      "selector": ".tiny-slider-item",
+      "query": {
+        "url": {
+          "type": "string",
+          "source": "attribute",
+          "selector": "img",
+          "attribute": "src"
+        },
+        "alt": {
+          "type": "string",
+          "source": "attribute",
+          "selector": "img",
+          "attribute": "alt",
+          "default": ""
+        },
+        "id": {
+          "type": "string",
+          "source": "attribute",
+          "selector": "img",
+          "attribute": "data-id"
+        },
+        "width": {
+          "type": "number",
+          "source": "attribute",
+          "selector": "img",
+          "attribute": "width"
+        },
+        "height": {
+          "type": "number",
+          "source": "attribute",
+          "selector": "img",
+          "attribute": "height"
+        }
+      }
+    },
+    "maxHeight": {
+      "type": "number",
+      "default": 200
+    },
+    "gutter": {
+      "type": "number",
+      "default": 20
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplayTimeout": {
+      "type": "number",
+      "default": 5000
+    },
+    "speed": {
+      "type": "number",
+      "default": 300
+    },
+    "loop": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "arrowsBlockId": {
+      "type": "string",
+      "default": ""
+    },
+    "uniqueId": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": true,
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}

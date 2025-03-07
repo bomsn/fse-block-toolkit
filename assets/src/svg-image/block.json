@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fse-block-toolkit/svg-image",
+  "version": "1.0.0",
+  "title": "SVG Image",
+  "category": "custom",
+  "keywords": [
+    "custom",
+    "svg",
+    "icon"
+  ],
+  "icon": "smiley",
+  "description": "A block the renders SVG images from HTML code.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "link": {
+      "type": "boolean",
+      "default": false
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "linkTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "html": {
+      "type": "string",
+      "source": "html",
+      "selector": ".fse-block-toolkit-svg",
+      "default": ""
+    },
+    "width": {
+      "type": "number",
+      "default": 40
+    },
+    "height": {
+      "type": "number",
+      "default": 40
+    }
+  },
+  "textdomain": "fse-block-toolkit",
+  "editorScript": "file:./index.js"
+}

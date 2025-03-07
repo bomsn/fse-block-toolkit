@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "fse-block-toolkit/table-of-contents",
+  "version": "1.0.0",
+  "title": "Custom Table of Contents",
+  "category": "custom",
+  "keywords": [
+    "custom",
+    "toc"
+  ],
+  "icon": "smiley",
+  "description": "A custom table of content block that generates TOC automatically.",
+  "supports": {
+    "html": false
+  },
+  "usesContext": [
+    "postId"
+  ],
+  "textdomain": "fse-block-toolkit",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./frontend.js",
+    "toc-custom-block"
+  ]
+}

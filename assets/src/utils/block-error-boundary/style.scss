@@ -1,0 +1,39 @@
+.fse-block-toolkit-components-error {
+	display: flex;
+	padding: 40px 0;
+	margin: 40px 0;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: gray;
+	text-align: center;
+}
+
+.fse-block-toolkit-components-error__header {
+	font-size: 18px;
+	margin: 0;
+	color: grey;
+}
+
+.fse-block-toolkit-components-error__image {
+	width: 25%;
+	margin: 0 0 24px 0;
+}
+
+.fse-block-toolkit-components-error__text {
+	margin: 1em 0 0;
+	color: grey;
+	font-size: 18px;
+	max-width: 60ch;
+}
+
+.fse-block-toolkit-components-error__message {
+	margin: 1em auto 0;
+	font-style: italic;
+	color: grey;
+	max-width: 60ch;
+}
+
+.fse-block-toolkit-error__button {
+	margin: 40px 0 0 0;
+}

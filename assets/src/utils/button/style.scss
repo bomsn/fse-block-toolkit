@@ -1,0 +1,80 @@
+.fse-block-toolkit-components-button:not(.is-link) {
+	align-items: center;
+	display: inline-flex;
+	height: auto;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	transition: box-shadow 0.1s linear;
+
+	// Prevents spinners displaying inside the button from overflowing.
+	.fse-block-toolkit-components-spinner {
+		position: static;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 2px blue;
+		box-shadow: inset 0 0 0 1px #ffffff, 0 0 0 2px blue;
+		outline: 3px solid transparent;
+	}
+
+	.fse-block-toolkit-components-button__text {
+		display: block;
+
+		> svg {
+			fill: currentColor;
+		}
+	}
+	.fse-block-toolkit-components-spinner + .fse-block-toolkit-components-button__text {
+		visibility: hidden;
+	}
+
+	&.text {
+		color: #1e1e1e;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+
+	&.outlined {
+		background: transparent;
+		color: currentColor;
+
+		&:not(:focus) {
+			box-shadow: inset 0 0 0 1px currentColor;
+		}
+
+		&:disabled,
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #1e1e1e;
+			color: #ffffff;
+		}
+
+		&:hover {
+			background-color: #1e1e1e;
+			color: #ffffff;
+			opacity: 1;
+		}
+	}
+}
+
+body:not(.woocommerce-block-theme-has-button-styles) .fse-block-toolkit-components-button:not(.is-link) {
+	min-height: 3em;
+
+	&:focus {
+		box-shadow: 0 0 0 2px blue;
+		box-shadow: inset 0 0 0 1px #ffffff, 0 0 0 2px blue;
+		outline: 3px solid transparent;
+	}
+
+	&.text {
+		color: #1e1e1e;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}
